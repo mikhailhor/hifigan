@@ -21,11 +21,11 @@ from nemo.utils.exp_manager import exp_manager
 
 @hydra_runner(config_path="conf/hifigan", config_name="hifigan_")
 def main(cfg):
-    cfg.model.train_ds.dataloader_params.batch_size=8
-    cfg.model.max_steps=1000
-    cfg.model.optim.lr=0.0001
-    cfg.train_dataset="Dataset/vocoder_output_train/hifigan_train_ft.json"
-    cfg.validation_datasets="Dataset/vocoder_output_valid/hifigan_train_ft.json"
+    #cfg.model.train_ds.dataloader_params.batch_size=8
+    #cfg.model.max_steps=1000
+    #cfg.model.optim.lr=0.0001
+    #cfg.train_dataset="Dataset/vocoder_output_train/hifigan_train_ft.json"
+    #cfg.validation_datasets="Dataset/vocoder_output_valid/hifigan_train_ft.json"
     #cfg.init_from_nemo_model="tts_hifigan.nemo"
     cfg.trainer.check_val_every_n_epoch=10
     trainer = pl.Trainer(**cfg.trainer)
